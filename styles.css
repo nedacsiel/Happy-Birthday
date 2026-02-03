@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(#ffd6e8, #fff);
+  font-family: system-ui, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #ff6b9c;
+  color: white;
+}
+
+/* 🎈 Balloons & 🎉 Confetti */
+.balloon, .confetti {
+  position: fixed;
+  pointer-events: none;
+}
+
+/* Balloon look */
+.balloon {
+  font-size: 32px;
+  animation: floatUp 4s ease-out forwards;
+}
+
+/* Confetti look */
+.confetti {
+  width: 8px;
+  height: 8px;
+  background: red;
+  animation: pop 2s ease-out forwards;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+}
+
+@keyframes pop {
+  from {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translate(var(--x), var(--y)) rotate(360deg);
+    opacity: 0;
+  }
+}
